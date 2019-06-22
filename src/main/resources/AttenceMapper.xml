@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hfxt.Userdao.OAUserdao">
+	<select id="OaLogin" resultType="com.hfxt.pojo.UserOA">
+		select * from UserOA where username=#{username} and password=#{password}
+	</select>
+ 	<select id="getSelectMess" resultType="com.hfxt.pojo.OAStudent">
+		select * from Student 
+			<where>
+			<if test="text1=='姓名'">
+				and name like concat('%',#{text2},'%')
+			</if>
+			<if test="text1=='电话'">
+				and tel like concat('%',#{text2},'%')
+			</if>
+			<if test="text1=='编号'">
+				and sid like concat('%',#{text2},'%')
+			</if>
+		</where>
+	</select>
+	<delete id="deleteStudent" parameterType="com.hfxt.pojo.OAStudent">
+	delete from Student where id=#{id}
+	</delete>
+	<insert id="saveStudent" parameterType="com.hfxt.pojo.OAStudent">
+    insert into Student(sid,name,sex,age,tel,grade)values(#{sid},#{name},#{sex},#{age},#{tel},#{grade})
+	</insert>
+	<select id="getupdate"  resultType="com.hfxt.pojo.OAStudent">
+	 select * from Student where id=#{id}
+	</select>
+	<update id="updateStudent" parameterType="com.hfxt.pojo.OAStudent">
+	update Student set sid=#{sid},name=#{name},sex=#{sex},age=#{age},tel=#{tel},grade=#{grade} where id=#{id}
+    </update>
+ 	<select id="ClassSelect" resultType="com.hfxt.pojo.OAClass">
+		select * from Class 
+			<where>
+			<if test="text3=='班级编号'">
+				and classid like concat('%',#{text4},'%')
+			</if>
+			<if test="text3=='班级名称'">
+				and classname like concat('%',#{text4},'%')
+			</if>
+		</where>
+	</select>
+	<delete id="deleteClass" parameterType="com.hfxt.pojo.OAClass">
+	delete from Class where id=#{id}
+	</delete>
+	<insert id="saveClass" parameterType="com.hfxt.pojo.OAClass">
+    insert into Class(classid,classname,classexplain)values(#{classid},#{classname},#{classexplain})
+	</insert>
+	<select id="getupdateOAClass"  resultType="com.hfxt.pojo.OAClass">
+	 select * from Class where id=#{id}
+	</select>
+	<update id="updateClass" parameterType="com.hfxt.pojo.OAClass">
+	update Class set classid=#{classid},classname=#{classname},classexplain=#{classexplain} where id=#{id}
+    </update>
+    <update id="UserOAs" parameterType="com.hfxt.pojo.UserOA">
+	update UserOA set password=#{password} where id=#{id}
+    </update>
+   <!-- <select id="getUser"  resultType="com.hfxt.pojo.UserOA">
+	select * from UserOA where id=#{id}
+  </select> -->
+</mapper>

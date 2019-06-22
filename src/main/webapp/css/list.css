@@ -1,0 +1,8 @@
+.site-table tbody tr td {text-align: center;}
+.site-table tbody tr td .layui-btn+.layui-btn{margin-left: 0px;}
+.admin-table-page {position: fixed;z-index: 19940201;bottom: 0;width: 100%;border-bottom: 1px solid #ddd;left: 0px;}
+#page .layui-laypage {margin: 6px 0 0 0;}
+.admin-main {padding: 10px;margin-bottom: 46px;}
+.layui-input{height: 32px;line-height: 32px;}
+.layui-form-label {padding: 9px 6px;}
+.layui-form-label {width: auto;}
