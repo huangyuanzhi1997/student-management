@@ -12,7 +12,7 @@
 Java版本：JDK 1.8  
 服务器：Tomcat 7.0  
 数据库：MySQL 5.0  
-系统采用技术：Spring+SpringMVC+Mybatis+Bootstrap+Jquery  
+系统采用技术：Spring+SpringMVC+Mybatis+Bootstrap+JQuery  
   
 主要功能：  
 ---------------
