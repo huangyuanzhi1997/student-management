@@ -3,12 +3,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
           http://www.springframework.org/schema/beans/spring-beans.xsd">
-	<!-- 创建讀取properties文件的bean -->
+	<!-- 创建读取properties文件的bean -->
 	<bean id="propscfg"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="location" value="classpath:database.properties" />
 	</bean>
-	<!--獲取數據源bean -->
+	<!--获取数据源bean -->
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
 		<property name="driverClassName" value="${driver}" />
 		<property name="url" value="${url}" />
@@ -18,7 +18,7 @@
 	<!-- 生成数据库连接 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="typeAliasesPackage" value="com.hfxt.pojo" />
+		<property name="typeAliasesPackage" value="com.huang.pojo" />
 		<property name="configLocation" value="classpath:mybatis-config.xml" />
 		<property name="mapperLocations" value="classpath:*Mapper.xml" />
 		<property name="plugins">
