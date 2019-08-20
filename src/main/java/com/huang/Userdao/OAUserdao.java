@@ -1,13 +1,19 @@
-package com.hfxt.Userdao;
+package com.huang.Userdao;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-import com.hfxt.pojo.OAClass;
-import com.hfxt.pojo.OAStudent;
-import com.hfxt.pojo.UserOA;
-
+import com.huang.pojo.OAClass;
+import com.huang.pojo.OAStudent;
+import com.huang.pojo.UserOA;
+/**
+ * 
+ *@author	黄远志
+ *@date		2019年6月22日下午11:01:56
+ *@GitHub	https://github.com/huangyuanzhi1997
+ *@Blog		https://www.huangyuanzhi.top
+ */
 public interface OAUserdao {
 	//OA页面登录
 	public UserOA OaLogin(@Param("username")String username,@Param("password")String password);

@@ -1,11 +1,18 @@
-package com.hfxt.bizImpl;
+package com.huang.bizImpl;
 import java.util.List;
-import com.hfxt.Userdao.OAUserdao;
-import com.hfxt.biz.OAUserdaoBiz;
-import com.hfxt.pojo.OAClass;
-import com.hfxt.pojo.OAStudent;
-import com.hfxt.pojo.UserOA;
 
+import com.huang.Userdao.OAUserdao;
+import com.huang.biz.OAUserdaoBiz;
+import com.huang.pojo.OAClass;
+import com.huang.pojo.OAStudent;
+import com.huang.pojo.UserOA;
+/**
+ * 
+ *@author	黄远志
+ *@date		2019年6月22日下午11:00:59
+ *@GitHub	https://github.com/huangyuanzhi1997
+ *@Blog		https://www.huangyuanzhi.top
+ */
 public class OABizImpl implements OAUserdaoBiz {
 	private OAUserdao oaUserdao;
 	public void setOaUserdao(OAUserdao oaUserdao) {

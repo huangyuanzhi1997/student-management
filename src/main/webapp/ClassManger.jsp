@@ -91,7 +91,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             </td>
                             </tr>
                         <tr>
-                            <td><strong>班级姓名:</strong></td>
+                            <td><strong>班级专业:</strong></td>
                             <td>
                                 &nbsp;&nbsp;&nbsp;<Strong><span id="accountsssss"></span></Strong>
                             </td>                         
@@ -144,7 +144,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                       <select name="text3" id="searchType">
                         <option value="">全部</option>
                         <option value="班级编号">班级编号</option>
-                        <option value="班级名称">班级名称</option>
+                        <option value="班级名称">班级专业</option>
                       </select>
                       <input name="text4" type="text" id="text4">
                       <input type="submit" name="button" id="button" value="点击查询"></td>
@@ -154,7 +154,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr align="center"  class="t1">
                     <td height="25" bgcolor="#D5E4F4"><strong>班级编号</strong></td>
-                    <td height="25" bgcolor="#D5E4F4"><strong>班级名称</strong></td>
+                    <td height="25" bgcolor="#D5E4F4"><strong>班级专业</strong></td>
                     <td bgcolor="#D5E4F4"><strong>班级院系</strong></td>
                     <td bgcolor="#D5E4F4"><strong>操作</strong></td>
                   </tr>

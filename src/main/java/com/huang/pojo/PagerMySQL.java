@@ -1,8 +1,14 @@
-package com.hfxt.pojo;
+package com.huang.pojo;
 
 import java.util.List;
 import java.util.Map;
-
+/**
+ * 
+ *@author	黄远志
+ *@date		2019年6月22日下午11:01:43
+ *@GitHub	https://github.com/huangyuanzhi1997
+ *@Blog		https://www.huangyuanzhi.top
+ */
 public class PagerMySQL<T> {
 	private int pageNo;
 	private int pageSize;

@@ -49,7 +49,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <td><input name="classid" type="text" class="text2" id="classid"></td>
                   </tr>
                   <tr>
-                    <td height="30" align="right"><span style="color:red;"></span>班级名称:</td>
+                    <td height="30" align="right"><span style="color:red;"></span>班级专业:</td>
                     <td><input name="classname" type="text" class="text2" id="classname"></td>
                   </tr>
                   <tr>

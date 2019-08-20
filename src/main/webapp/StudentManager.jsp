@@ -95,7 +95,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <form action="" class="form-horizontal">
                         <table>
                         <tr>
-                            <td><strong>学生编号:</strong></td>                    
+                            <td><strong>学生学号:</strong></td>                    
                                 <td>&nbsp;&nbsp;&nbsp;<Strong><span id="userid"></span></Strong>
                             </td>
                             </tr>
@@ -124,7 +124,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             </td>
                    </tr>
                        <tr>
-                            <td><strong>学生户籍:</strong></td>
+                            <td><strong>家庭住址:</strong></td>
                             <td>
                               &nbsp;&nbsp;&nbsp;<Strong><span id="type"></span></Strong>
                             </td>                       
@@ -173,7 +173,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         <option value="">全部</option>
                         <option value="姓名">姓名</option>
                         <option value="电话">电话</option>
-                        <option value="用户名">编号</option>
+                        <option value="用户名">学号</option>
                       </select>
                       <input name="text2" type="text" id="text2">
                       <input type="submit" name="button" id="button" value="点击查询"></td>
@@ -182,12 +182,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               </form>              
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr align="center"  class="t1">
-                    <td height="25" bgcolor="#D5E4F4"><strong>编号</strong></td>
+                    <td height="25" bgcolor="#D5E4F4"><strong>学号</strong></td>
                     <td height="25" bgcolor="#D5E4F4"><strong>姓名</strong></td>
                     <td bgcolor="#D5E4F4"><strong>性别</strong></td>
                     <td bgcolor="#D5E4F4"><strong>出生日期</strong></td>
                     <td bgcolor="#D5E4F4"><strong>电话</strong></td>
-                    <td bgcolor="#D5E4F4"><strong>户籍</strong></td>
+                    <td bgcolor="#D5E4F4"><strong>家庭住址</strong></td>
                     <td bgcolor="#D5E4F4"><strong>操作</strong></td>
                   </tr>
                   <c:forEach var="list" items="${pagerBooks.entitiesList}" varStatus="status">

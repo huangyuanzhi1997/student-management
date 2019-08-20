@@ -1,5 +1,11 @@
-package com.hfxt.pojo;
-
+package com.huang.pojo;
+/**
+ * 
+ *@author	黄远志
+ *@date		2019年6月22日下午11:01:22
+ *@GitHub	https://github.com/huangyuanzhi1997
+ *@Blog		https://www.huangyuanzhi.top
+ */
 public class OAClass {
 	private int id;
 	private String classid;

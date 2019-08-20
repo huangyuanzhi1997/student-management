@@ -31,11 +31,11 @@
 	</bean>
 	<!-- 创建各个dao层接口的bean -->
 	<bean id="oaUserdao" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="com.hfxt.Userdao.OAUserdao" />
+		<property name="mapperInterface" value="com.huang.Userdao.OAUserdao" />
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 	<!--创建各个biz层实现类的bean -->
-	<bean id="oaUserdaoBiz" class="com.hfxt.bizImpl.OABizImpl">
+	<bean id="oaUserdaoBiz" class="com.huang.bizImpl.OABizImpl">
 		<property name="oaUserdao" ref="oaUserdao" />
 	</bean>
 	<!-- <bean id="multipartResolver"

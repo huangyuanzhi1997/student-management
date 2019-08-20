@@ -45,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <td><input type="hidden" id="id" name="id" value=""/></td>
                   </tr>
                   <tr>
-                    <td height="30" align="right"><span style="color:red;"></span>学员编号：</td>           
+                    <td height="30" align="right"><span style="color:red;"></span>学员学号：</td>           
                     <td><input name="sid" type="text" class="text2"  value="${list.sid}"></td>
                   </tr>
                   <tr>
@@ -66,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <td><input name="tel" type="text" class="text2" value="${list.tel}" ></td>
                   </tr>
                   <tr>
-                    <td height="30" align="right"><span style="color:red;"></span>学员户籍：</td>
+                    <td height="30" align="right"><span style="color:red;"></span>家庭住址：</td>
                     <td><input name="grade" type="text" class="text2" value="${list.grade}"></td>
                   </tr>
                   <tr>

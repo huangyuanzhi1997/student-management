@@ -1,4 +1,4 @@
-package com.hfxt.controller;
+package com.huang.controller;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -13,12 +13,19 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.hfxt.biz.OAUserdaoBiz;
-import com.hfxt.pojo.OAClass;
-import com.hfxt.pojo.OAStudent;
-import com.hfxt.pojo.PagerMySQL;
-import com.hfxt.pojo.UserOA;
+import com.huang.biz.OAUserdaoBiz;
+import com.huang.pojo.OAClass;
+import com.huang.pojo.OAStudent;
+import com.huang.pojo.PagerMySQL;
+import com.huang.pojo.UserOA;
 
+/**
+ * 
+ *@author	黄远志
+ *@date		2019年6月22日下午11:01:13
+ *@GitHub	https://github.com/huangyuanzhi1997
+ *@Blog		https://www.huangyuanzhi.top
+ */
 
 @Controller
 public class ControllerOA {
