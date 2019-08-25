@@ -4,6 +4,7 @@ import java.util.List;
 import com.huang.Userdao.OAUserdao;
 import com.huang.biz.OAUserdaoBiz;
 import com.huang.pojo.OAClass;
+import com.huang.pojo.OAScore;
 import com.huang.pojo.OAStudent;
 import com.huang.pojo.UserOA;
 /**
@@ -83,4 +84,51 @@ public class OABizImpl implements OAUserdaoBiz {
 	public int UserOAs(UserOA id) {
 		return this.oaUserdao.UserOAs(id);
 	}
+	
+	
+	
+	
+	//查询
+	@Override
+	public List<OAScore> ScoreSelect(String text5, String text6) {
+		
+		return  this.oaUserdao.ScoreSelect(text5, text6);
+	}
+	
+	//删除
+	@Override
+	public int deleteScore(Integer id) {
+		
+		return this.oaUserdao.deleteScore(id);
+	}
+	
+	//添加
+	@Override
+	public int saveScore(OAScore oaScore) {
+		
+		return this.oaUserdao.saveScore(oaScore);
+	}
+	
+	//修改传值
+	@Override
+	public OAScore getupdateOAScore(Integer id) {
+		
+		return this.oaUserdao.getupdateOAScore(id);
+	}
+	
+	//更新Score
+	@Override
+	public int updateScore(OAScore id) {
+		return this.oaUserdao.updateScore(id);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

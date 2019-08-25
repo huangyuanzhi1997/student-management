@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <center>
   <table width="900" border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <td height="60" bgcolor="#E6F5FF" style="color:#06F; font-size:19px; font-weight:bolder; padding-left:50px;">学生管理系统</td>
+      <td height="60" bgcolor="#E6F5FF" style="color:#06F; font-size:30px; font-weight:bolder; padding-left:50px;">学生管理系统</td>
     </tr>
     
     <tr>
@@ -28,10 +28,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <tr>
       <td height="500" align="center" valign="top"><table width="900" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td width="191" height="500" align="center" valign="top" background="Images/leftbg.jpg">
+          <td width="191" height="500" align="left" valign="top" background="Images/leftbg.jpg">
           <%@ include file="Left.jsp"%>
           </td>
-          <td width="709" align="center" valign="top" bgcolor="#F6F9FE"><table width="709" border="0" cellspacing="0" cellpadding="0">
+          <td width="900" align="center" valign="top" bgcolor="#F6F9FE"><table width="900" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <td height="30" background="Images/mainMenuBg.jpg" style="padding-left:25px;">修改班级信息</td>
             </tr>
@@ -64,6 +64,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   </tr>
                 </table>
               </form></td>
+              
+                            
+              <!-- 页面大小保持一致 -->
+              <div style="margin:0 auto;text-align:center;width:900px;">
+              </div>
+              
             </tr>
           </table></td>
         </tr>

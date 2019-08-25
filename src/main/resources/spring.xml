@@ -38,9 +38,11 @@
 	<bean id="oaUserdaoBiz" class="com.huang.bizImpl.OABizImpl">
 		<property name="oaUserdao" ref="oaUserdao" />
 	</bean>
+	<!-- 注册multipart解析器，multipartResolver 名字固定，是由DispatcharServlet直接调用的 -->
 	<!-- <bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		限定上传文件大小，单位 B
 		<property name="maxUploadSize" value="5000000" />
 		<property name="defaultEncoding" value="utf-8" />
-	</bean> -->
+	</bean>  -->
 </beans>

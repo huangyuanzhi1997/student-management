@@ -18,7 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
- <style type="text/css">
+<style type="text/css">
     .one{
         text-align:center;
         font-size:20px;
@@ -26,13 +26,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </style>
 <script type="text/javascript">
 	$(function(){
-		$('#text4').val("${huixianName}");
+		$('#text6').val("${huixianName}");
 		});	
 	//查看
-	function mabi(classid,classname,classexplain){	
- 		$('#userid').text(classid);
- 		$('#accountsssss').text(classname);
- 		$('#name').text(classexplain);
+	function mabi(sid,sname,course,teacher,score,time){	
+ 		$('#userid').text(sid);
+ 		$('#accountsssss').text(sname);
+ 		$('#name').text(course);
+ 		$('#sex').text(teacher);
+ 		$('#classnumber').text(score);
+ 		$('#type').text(time);
  	};
  	//删除
  	function batchDeletes(id){
@@ -42,10 +45,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  	}
  	function batchDelete(){
  		 var id=$.trim($("#id").val()); 
- 		window.location="deleteClass?id="+id;
+ 		window.location="deleteScore?id="+id;
  	}
 </script>
- <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<style type="text/css">
+    .one{
+        text-align:center;
+        font-size:20px;
+    }
+    </style>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
        <script src="bootstrap/js/bootstrap.min.js"></script>
        <!-- 删除框模板 -->
     <div class="modal  fade bs-example-modal-sm" id="delForm" tabindex="-1" role="dialog">
@@ -60,7 +69,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <div class="modal-body">
 					<div class="row">
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="hidden" name="id" id="id"/><br/>
-					<input type="hidden" name="studentid" id="studentid" value="${user.stuinfo.studentid}"/>
+					<%-- <input type="hidden" name="studentid" id="studentid" value="${user.stuinfo.studentid}"/> --%>
 						<div class="one">确定删除此信息吗?</div>
 					</div>
 				</div>
@@ -70,9 +79,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
 <!--查看框模板-->
-<div class="container" align="center">
+ <div class="container" align="center">
     <div class="modal fade" id="loginForms" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -86,22 +95,40 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <form action="" class="form-horizontal">
                         <table>
                         <tr>
-                            <td><strong>班级编号:</strong></td>                    
+                            <td><strong>学生学号:</strong></td>                    
                                 <td>&nbsp;&nbsp;&nbsp;<Strong><span id="userid"></span></Strong>
                             </td>
                             </tr>
                         <tr>
-                            <td><strong>班级专业:</strong></td>
+                            <td><strong>学生姓名:</strong></td>
                             <td>
                                 &nbsp;&nbsp;&nbsp;<Strong><span id="accountsssss"></span></Strong>
                             </td>                         
                         </tr>
                         <tr>
-                            <td><strong>班级院系:</strong></td>
+                            <td><strong>课程名称:</strong></td>
                             <td>
                                &nbsp;&nbsp;&nbsp;<Strong><span id="name"></span></Strong>                     
                             </td>                       
-                       </tr>            
+                       </tr>
+                        <tr>
+                            <td><strong>代课老师:</strong></td>
+                            <td>
+                                &nbsp;&nbsp;&nbsp;<Strong><span id="sex"></span></Strong>
+                            </td>                     
+                        </tr>
+                         <tr>
+                          <td><strong>成绩:</strong></td>
+                            <td>
+                               &nbsp;&nbsp;&nbsp;<Strong><span id="classnumber"></span></Strong>
+                            </td>
+                   </tr>
+                       <tr>
+                            <td><strong>时间:</strong></td>
+                            <td>
+                              &nbsp;&nbsp;&nbsp;<Strong><span id="type"></span></Strong>
+                            </td>                       
+                       </tr>               
                         </table>
                     </form>
                 </div>
@@ -119,6 +146,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <tr>
       <td height="60" bgcolor="#E6F5FF" style="color:#06F; font-size:30px; font-weight:bolder; padding-left:50px;">学生管理系统</td>
     </tr>
+    
     <tr>
       <td height="30" background="Images/MenuBg.jpg">&nbsp;</td>
     </tr>
@@ -134,43 +162,52 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </tr>
             <tr>
               <td height="470" align="center" valign="top" bgcolor="#F6F9FE">
-              <form name="form1" method="post" action="" id="searchForm">
+              <form name="form1" method="post" action="ScoreOAselect" id="searchForm">
                <input type="hidden" id="pageNo" name="pageNo" value="${pagerBooks.pageNo}"/>
                <input type="hidden" id="pageSize" name="pageSize" value="${pagerBooks.pageSize}"/> 
                 <table width="100%%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                  <td width="28%" height="30" style="padding-left:20px;"> 功能导航：<button style="background:#7bbfea"><a href="ClassidAdd.jsp">添加班级</a></button></td>
+                  <td width="28%" height="30" style="padding-left:20px;"> 功能导航：<button style="background:#7bbfea"><a href="ScoreAdd.jsp">添加学生成绩</a></button></td>
                     <td width="72%">查询：
-                      <select name="text3" id="searchType">
+                      <select name="text5" id="searchType">
                         <option value="">全部</option>
-                        <option value="班级编号">班级编号</option>
-                        <option value="班级名称">班级专业</option>
+                        <option value="姓名">姓名</option>
+                       <!--  <option value="电话">电话</option> -->
+                        <option value="用户名">学号</option>
                       </select>
-                      <input name="text4" type="text" id="text4">
+                      <input name="text6" type="text" id="text6">
                       <input type="submit" name="button" id="button" value="点击查询"></td>
                   </tr>
                 </table>
               </form>              
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr align="center"  class="t1">
-                    <td height="25" bgcolor="#D5E4F4"><strong>班级编号</strong></td>
-                    <td height="25" bgcolor="#D5E4F4"><strong>班级专业</strong></td>
-                    <td bgcolor="#D5E4F4"><strong>班级院系</strong></td>
+                    <td height="25" bgcolor="#D5E4F4"><strong>学号</strong></td>
+                    <td height="25" bgcolor="#D5E4F4"><strong>姓名</strong></td>
+                    <td bgcolor="#D5E4F4"><strong>课程名称</strong></td>
+                    <td bgcolor="#D5E4F4"><strong>代课老师</strong></td>
+                    <td bgcolor="#D5E4F4"><strong>成绩</strong></td>
+                    <td bgcolor="#D5E4F4"><strong>时间</strong></td>
                     <td bgcolor="#D5E4F4"><strong>操作</strong></td>
                   </tr>
                   <c:forEach var="list" items="${pagerBooks.entitiesList}" varStatus="status">
                   <tr align="center"<c:if test="${status.index % 2==1}">
                       style="background-color:rgb(205,300,200);"
                       </c:if>> 
-                      <td height="25" align="center">${list.classid}</td>
-                      <td height="25" align="center">${list.classname}</td>
-                      <td>${list.classexplain}</td>
-                   <td align="center">
+                      <td height="25" align="center">${list.sid}</td>
+                      <td height="25" align="center">${list.sname}</td>
+                      <td>${list.course}</td>
+                      <td>${list.teacher}</td>
+                      <td align="center">${list.score}</td>
+                      <td align="center">${list.time}</td>
+                      <td align="center">
 					<button class="layui-btn layui-btn-normal layui-btn-mini" type="button" data-toggle="modal" data-target="#loginForms"  style="background:#7bbfea"
-					 onclick="mabi('${list.classid}','${list.classname}','${list.classexplain}')">预览</button>							 		
-					<button class="layui-btn layui-btn-mini" type="button" style="background:#50b7c1"><a href="Selects?id=${list.id}">编辑</a></button>
+					 onclick="mabi('${list.sid}','${list.sname}','${list.course}','${list.teacher}','${list.score}','${list.time}')">预览</button>
+					 
+					 <!-- 编辑信息，并跳转编辑页面 -->
+					<button class="layui-btn layui-btn-mini" type="button" style="background:#50b7c1"><a href="Selectss?id=${list.id}">编辑</a></button>
 					<button href="javascript:;" data-id="1" data-opt="del" class="layui-btn layui-btn-danger layui-btn-mini" style="background:#ed1941" data-toggle="modal" data-target="#delForm" onclick="batchDeletes('${list.id}')">删除</button>
-					</td>
+					</td> 
                     </tr>
                  </c:forEach>
                   <tr>

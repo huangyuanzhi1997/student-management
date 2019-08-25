@@ -15,6 +15,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.huang.biz.OAUserdaoBiz;
 import com.huang.pojo.OAClass;
+import com.huang.pojo.OAScore;
 import com.huang.pojo.OAStudent;
 import com.huang.pojo.PagerMySQL;
 import com.huang.pojo.UserOA;
@@ -54,11 +55,13 @@ public class ControllerOA {
 		}
 		return modelAndView;		
 	}
+	
+	
 	//Student信息查询
 	@RequestMapping("StudentOAselect")
 	public String getSelectMess(String text1,String text2,Model model,
 			@RequestParam(value = "pageNo", defaultValue = "1") Integer curPage,
-			@RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize){       
+			@RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize){       
 		 PageHelper.startPage(curPage, pageSize);
 		List<OAStudent> list=oaUserdaoBiz.getSelectMess(text1, text2);
 		PageInfo<OAStudent> pageInfo = new PageInfo<OAStudent>(list);
@@ -106,6 +109,7 @@ public class ControllerOA {
 		}
 		return view;
 	}
+	
 	 //修改Student
     @RequestMapping("Studentupdate")
     public String Studentupdate(Model model,Integer id,int sid,String name,String sex,String age,String tel,String grade){   		
@@ -124,11 +128,111 @@ public class ControllerOA {
 	} 	
 	return "/StudentOAselect";  	
     }
+    
+	
+    
+    
+    
+	/*========================================Score信息==============================================*/
+	
+	
+	
+
+    
+    
+    
+	//Score信息查询
+	@RequestMapping("ScoreOAselect")
+	public String ScoreSelect(String text5,String text6,Model model,
+			@RequestParam(value = "pageNo", defaultValue = "1") Integer curPage,
+			@RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize){       
+		 PageHelper.startPage(curPage, pageSize);
+		List<OAScore> list=oaUserdaoBiz.ScoreSelect(text5, text6);
+		PageInfo<OAScore> pageInfo = new PageInfo<OAScore>(list);
+		PagerMySQL<OAScore> pager = new PagerMySQL<OAScore>(
+				curPage, pageSize, new Long(pageInfo.getTotal()).intValue());
+		pager.setEntitiesList(list);
+		if (text5!= null && text6!=null) {
+			model.addAttribute("huixianName", text5);
+			model.addAttribute("huixianNames", text6);
+		}
+		model.addAttribute("pagerBooks", pager);
+		model.addAttribute("mainPage", "/ScoreManager.jsp");
+		return "/ScoreManager.jsp";
+	}
+	//删除
+	@RequestMapping("deleteScore")
+	public ModelAndView deleteScore(Integer id){
+		ModelAndView modelAndView=new ModelAndView();
+		int num=oaUserdaoBiz.deleteScore(id);
+		if(num==1){
+			modelAndView.setViewName("/ScoreOAselect");
+		}
+		return modelAndView;	
+	}
+	//添加
+	@RequestMapping("saveScore")
+	public ModelAndView saveScore(OAScore oaScore,Model model){
+		ModelAndView modelAndView=new ModelAndView();
+		int rets=oaUserdaoBiz.saveScore(oaScore); 		    
+	    	if(rets==1){
+	    		modelAndView.addObject("biz", rets);
+	    		model.addAttribute("mywo","保存成功");
+	    		modelAndView.setViewName("/ScoreOAselect");
+	    	}
+			return modelAndView;	    		    	
+}   
+	//修改传值
+	@RequestMapping("Selectss")
+	public ModelAndView getupdateOAScore(Integer id) {
+		ModelAndView view = new ModelAndView();
+		OAScore list=oaUserdaoBiz.getupdateOAScore(id);
+		if (list != null) {
+			view.addObject("list", list);
+			view.setViewName("/ScoreUpdate.jsp");
+		}
+		return view;
+	}
+
+    
+    
+	
+	 //修改Score
+   @RequestMapping("Scoreupdate")
+   public String Scoreupdate(Model model,Integer id,int sid,String sname,String course,String teacher,String score,String time){   		
+   OAScore bizz=new OAScore();
+   bizz.setId(id);
+   bizz.setSid(sid);
+   bizz.setSname(sname);
+   bizz.setCourse(course);
+   bizz.setTeacher(teacher);
+   bizz.setScore(score);
+   bizz.setTime(time);
+   int ret=oaUserdaoBiz.updateScore(bizz);
+	if(ret==1){
+		model.addAttribute("mywo","修改成功");
+		return "/ScoreOAselect";
+	} 	
+	return "/ScoreOAselect";  	
+   }
+	
+	
+	
+    
+    
+    
+    
+    
+    
+   
+   
+   
+    
    //Class班级查询
   	@RequestMapping("ClassOAselect")
   	public String ClassSelect(String text3,String text4,Model model,
   			@RequestParam(value = "pageNo", defaultValue = "1") Integer curPage,
-  			@RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize){       
+  			@RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize){       
   		 PageHelper.startPage(curPage, pageSize);
   		List<OAClass> list=oaUserdaoBiz.ClassSelect(text3, text4);
   		PageInfo<OAClass> pageInfo = new PageInfo<OAClass>(list);
@@ -176,7 +280,7 @@ public class ControllerOA {
   		}
   		return view;
   	}
-  	 //修改Student
+  	 //修改Class
     @RequestMapping("Classupdate")
       public String Classupdate(Model model,Integer id,String classid,String classname,String classexplain){   		
      OAClass bizz=new OAClass();

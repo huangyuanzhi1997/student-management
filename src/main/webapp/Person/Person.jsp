@@ -8,7 +8,9 @@
 	$('#searchForm').submit();
      }
 	</script>
-<div style="margin:0 auto;text-align:center;width:800px;">
+<div style="margin:0 auto;text-align:center;width:900px;">
+
+
 <a href="javascript:void(0)"
      onclick="jump(1,${pagerBooks.pageSize})">首页</a>&nbsp;
     <c:if test="${pagerBooks.hasPrev eq true}">

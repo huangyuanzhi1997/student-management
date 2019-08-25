@@ -4,6 +4,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import com.huang.pojo.OAClass;
+import com.huang.pojo.OAScore;
 import com.huang.pojo.OAStudent;
 import com.huang.pojo.UserOA;
 /**
@@ -16,6 +17,8 @@ import com.huang.pojo.UserOA;
 public interface OAUserdaoBiz {
 	//OA页面登录
 	public UserOA OaLogin(@Param("username")String username,@Param("password")String password);
+	
+	
 	//Student信息查询
 	public List<OAStudent> getSelectMess(@Param("text1")String text1,@Param("text2")String text2);
 	//Student信息删除
@@ -26,6 +29,23 @@ public interface OAUserdaoBiz {
 	public OAStudent getupdate(@Param("id")Integer id);
 	 //修改Student
     int updateStudent(OAStudent id);
+    
+    
+    
+    //Score信息查询
+    public List<OAScore> ScoreSelect(@Param("text5")String text5,@Param("text6")String text6);
+    //Score信息删除
+    int deleteScore(Integer id);
+    //Score信息添加
+    int saveScore(OAScore oaScore);
+    //修改传值
+    public OAScore getupdateOAScore(@Param("id")Integer id);
+    //修改Student
+    int updateScore(OAScore id);
+    
+    
+    
+    
    //Class班级查询
   	public List<OAClass> ClassSelect(@Param("text3")String text3,@Param("text4")String text4);
   	 //Class班级删除

@@ -98,7 +98,7 @@ return re.test(str);
 <center>
   <table width="900" border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <td height="60" bgcolor="#E6F5FF" style="color:#06F; font-size:19px; font-weight:bolder; padding-left:50px;">学生管理系统</td>
+      <td height="60" bgcolor="#E6F5FF" style="color:#06F; font-size:30px; font-weight:bolder; padding-left:50px;">学生管理系统</td>
     </tr>
     
     <tr>
@@ -110,7 +110,10 @@ return re.test(str);
           <td width="191" height="500" align="center" valign="top" background="Images/leftbg.jpg">
           <%@ include file="Left.jsp"%>
           </td>
-          <td width="790" align="center" valign="top" bgcolor="#F6F9FE"><table width="790" border="0" cellspacing="0" cellpadding="0">
+          
+          <!-- 横条宽度 -->
+          
+          <td width="900" align="center" valign="top" bgcolor="#F6F9FE"><table width="900" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <td height="30" background="Images/mainMenuBg.jpg" style="padding-left:25px;">修改密码</td>
             </tr>
@@ -144,6 +147,12 @@ return re.test(str);
                   </tr>              
                 </table>
               </form></td>
+              
+              <!-- 页面大小保持一致 -->
+              <div style="margin:0 auto;text-align:center;width:900px;">
+              </div>
+              
+              
             </tr>
           </table></td>
         </tr>
