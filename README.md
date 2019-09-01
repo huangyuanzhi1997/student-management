@@ -36,7 +36,7 @@ Java版本：JDK 1.8
 
 ## 部分功能展示
 ### 登录
-
+![image](https://github.com/huangyuanzhi1997/student-management/blob/master/images/stu01.png)
 
 ### 学生信息管理
 
