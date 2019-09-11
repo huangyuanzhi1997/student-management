@@ -122,13 +122,4 @@ public class OABizImpl implements OAUserdaoBiz {
 		return this.oaUserdao.updateScore(id);
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

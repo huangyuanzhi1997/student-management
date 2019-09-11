@@ -35,6 +35,11 @@ public class ControllerOA {
 	public void setBiz(OAUserdaoBiz oaUserdaoBiz) {
 		this.oaUserdaoBiz = oaUserdaoBiz;
 	}
+	
+	
+	/*========================================Login信息==============================================*/
+	
+	
 	//登录
 	@RequestMapping("/logindo")
 	public ModelAndView oaLogin(HttpServletRequest request,UserOA user,HttpSession session,String username,String password,Model model){
@@ -55,6 +60,9 @@ public class ControllerOA {
 		}
 		return modelAndView;		
 	}
+	
+	
+	/*========================================Student信息==============================================*/
 	
 	
 	//Student信息查询
@@ -129,17 +137,9 @@ public class ControllerOA {
 	return "/StudentOAselect";  	
     }
     
-	
-    
-    
     
 	/*========================================Score信息==============================================*/
 	
-	
-	
-
-    
-    
     
 	//Score信息查询
 	@RequestMapping("ScoreOAselect")
@@ -194,9 +194,6 @@ public class ControllerOA {
 		return view;
 	}
 
-    
-    
-	
 	 //修改Score
    @RequestMapping("Scoreupdate")
    public String Scoreupdate(Model model,Integer id,int sid,String sname,String course,String teacher,String score,String time){   		
@@ -216,17 +213,9 @@ public class ControllerOA {
 	return "/ScoreOAselect";  	
    }
 	
-	
-	
     
+	/*========================================Class信息==============================================*/
     
-    
-    
-    
-    
-   
-   
-   
     
    //Class班级查询
   	@RequestMapping("ClassOAselect")
@@ -295,6 +284,11 @@ public class ControllerOA {
   	} 	
   	return "/ClassOAselect";  	
       }
+    
+    
+	/*========================================Password信息==============================================*/
+    
+    
     //修改密码
     @RequestMapping("OAUserupdates")
       public String Classupdate(Model model,int id,String password){   		
@@ -307,6 +301,8 @@ public class ControllerOA {
   	} 	
   	return "/login.jsp";  	
       }
+    
+    
     //修改传值
 	/*@RequestMapping("Selectss")
   	public ModelAndView getFinanss() {
