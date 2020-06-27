@@ -39,18 +39,21 @@
     
 	
 	
+	
+	
+		
 	<!-- ==============================成绩信息========================================= -->
 	
 	
- 	<select id="ScoreSelect" resultType="com.huang.pojo.OAScore">
+<!--  	<select id="ScoreSelect" resultType="com.huang.pojo.OAScore">
 		select * from Score 
 			<where>
 			<if test="text5=='姓名'">
 				and sname like concat('%',#{text6},'%')
 			</if>
-			<!-- <if test="text1=='电话'">
+			<if test="text1=='电话'">
 				and tel like concat('%',#{text2},'%')
-			</if> -->
+			</if>
 			<if test="text5=='学号'">
 				and sid like concat('%',#{text6},'%')
 			</if>
@@ -68,26 +71,7 @@
 	<update id="updateScore" parameterType="com.huang.pojo.OAScore">
 	update Score set sid=#{sid},sname=#{sname},course=#{course},teacher=#{teacher},score=#{score},time=#{time} where id=#{id}
     </update>
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+     -->
 	
 	
 	
