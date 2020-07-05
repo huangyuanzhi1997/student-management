@@ -11,7 +11,7 @@
 开发工具：Eclipse  
 Java版本：JDK 1.8  
 服务器：Tomcat 7.0  
-数据库：MySQL 5.0  
+数据库：MySQL 5.7  
 系统采用技术：Spring+Spring MVC+MyBatis+Bootstrap+jQuery  
   
 ## 功能实现 
@@ -84,7 +84,7 @@ Java版本：JDK 1.8
 
 此项目采用注解式开发，项目结构如下：
 
-
+![image](https://github.com/huangyuanzhi1997/student-management/blob/master/images/stu13.png)
 
 
 
