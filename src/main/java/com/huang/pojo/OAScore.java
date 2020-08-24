@@ -7,53 +7,79 @@ package com.huang.pojo;
  */
 public class OAScore {
 	private int id;
-	private int sid;
-	private String sname;
+	private int num;
+	private String name;
 	private String course;
 	private String teacher;
 	private String score;
 	private String time;
-	public int getId() {
-		return id;
+
+	@Override
+	public String toString() {
+		return "OAScore{" +
+				"id=" + id +
+				", num=" + num +
+				", name='" + name + '\'' +
+				", course='" + course + '\'' +
+				", teacher='" + teacher + '\'' +
+				", score='" + score + '\'' +
+				", time='" + time + '\'' +
+				'}';
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getSid() {
-		return sid;
+
+	public void setNum(int num) {
+		this.num = num;
 	}
-	public void setSid(int sid) {
-		this.sid = sid;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getSname() {
-		return sname;
-	}
-	public void setSname(String sname) {
-		this.sname = sname;
-	}
-	public String getCourse() {
-		return course;
-	}
+
 	public void setCourse(String course) {
 		this.course = course;
 	}
-	public String getTeacher() {
-		return teacher;
-	}
+
 	public void setTeacher(String teacher) {
 		this.teacher = teacher;
 	}
-	public String getScore() {
-		return score;
-	}
+
 	public void setScore(String score) {
 		this.score = score;
 	}
-	public String getTime() {
-		return time;
-	}
+
 	public void setTime(String time) {
 		this.time = time;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public int getNum() {
+		return num;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getCourse() {
+		return course;
+	}
+
+	public String getTeacher() {
+		return teacher;
+	}
+
+	public String getScore() {
+		return score;
+	}
+
+	public String getTime() {
+		return time;
+	}
 }

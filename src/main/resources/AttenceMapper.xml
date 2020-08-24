@@ -6,8 +6,9 @@
 	<select id="OaLogin" resultType="com.huang.pojo.UserOA">
 		select * from UserOA where username=#{username} and password=#{password}
 	</select>
-	
-	
+
+
+    <!-- ==============================学生信息========================================= -->
 	
 	
  	<select id="getSelectMess" resultType="com.huang.pojo.OAStudent">
@@ -36,24 +37,20 @@
 	<update id="updateStudent" parameterType="com.huang.pojo.OAStudent">
 	update Student set sid=#{sid},name=#{name},sex=#{sex},age=#{age},tel=#{tel},grade=#{grade} where id=#{id}
     </update>
-    
-	
-	
-	
-	
+
 		
 	<!-- ==============================成绩信息========================================= -->
 	
 	
-<!--  	<select id="ScoreSelect" resultType="com.huang.pojo.OAScore">
-		select * from Score 
+  	<select id="ScoreSelect" resultType="com.huang.pojo.OAScore">
+		select * from Score
 			<where>
 			<if test="text5=='姓名'">
-				and sname like concat('%',#{text6},'%')
+				and name like concat('%',#{text6},'%')
 			</if>
-			<if test="text1=='电话'">
-				and tel like concat('%',#{text2},'%')
-			</if>
+			<!--<if test="text1=='电话'">-->
+				<!--and tel like concat('%',#{text2},'%')-->
+			<!--</if>-->
 			<if test="text5=='学号'">
 				and sid like concat('%',#{text6},'%')
 			</if>
@@ -63,20 +60,19 @@
 	delete from Score where id=#{id}
 	</delete>
 	<insert id="saveScore" parameterType="com.huang.pojo.OAScore">
-    insert into Score(sid,sname,course,teacher,score,time)values(#{sid},#{sname},#{course},#{teacher},#{score},#{time})
+    insert into Score(num,name,course,teacher,score,time)values(#{num},#{name},#{course},#{teacher},#{score},#{time})
 	</insert>
 	<select id="getupdateOAScore"  resultType="com.huang.pojo.OAScore">
 	 select * from Score where id=#{id}
 	</select>
 	<update id="updateScore" parameterType="com.huang.pojo.OAScore">
-	update Score set sid=#{sid},sname=#{sname},course=#{course},teacher=#{teacher},score=#{score},time=#{time} where id=#{id}
+	update Score set num=#{num},name=#{name},course=#{course},teacher=#{teacher},score=#{score},time=#{time} where id=#{id}
     </update>
-     -->
-	
-	
-	
-	
-	
+
+
+    <!-- ==============================班级信息========================================= -->
+
+
  	<select id="ClassSelect" resultType="com.huang.pojo.OAClass">
 		select * from Class 
 			<where>

@@ -29,9 +29,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$('#text6').val("${huixianName}");
 		});	
 	//查看
-	function mabi(sid,sname,course,teacher,score,time){	
- 		$('#userid').text(sid);
- 		$('#accountsssss').text(sname);
+	function mabi(num,name,course,teacher,score,time){
+ 		$('#userid').text(num);
+ 		$('#accountsssss').text(name);
  		$('#name').text(course);
  		$('#sex').text(teacher);
  		$('#classnumber').text(score);
@@ -194,15 +194,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   <tr align="center"<c:if test="${status.index % 2==1}">
                       style="background-color:rgb(205,300,200);"
                       </c:if>> 
-                      <td height="25" align="center">${list.sid}</td>
-                      <td height="25" align="center">${list.sname}</td>
+                      <td height="25" align="center">${list.num}</td>
+                      <td height="25" align="center">${list.name}</td>
                       <td>${list.course}</td>
                       <td>${list.teacher}</td>
                       <td align="center">${list.score}</td>
                       <td align="center">${list.time}</td>
                       <td align="center">
 					<button class="layui-btn layui-btn-normal layui-btn-mini" type="button" data-toggle="modal" data-target="#loginForms"  style="background:#7bbfea"
-					 onclick="mabi('${list.sid}','${list.sname}','${list.course}','${list.teacher}','${list.score}','${list.time}')">预览</button>
+					 onclick="mabi('${list.num}','${list.name}','${list.course}','${list.teacher}','${list.score}','${list.time}')">预览</button>
 					 
 					 <!-- 编辑信息，并跳转编辑页面 -->
 					<button class="layui-btn layui-btn-mini" type="button" style="background:#50b7c1"><a href="Selectss?id=${list.id}">编辑</a></button>

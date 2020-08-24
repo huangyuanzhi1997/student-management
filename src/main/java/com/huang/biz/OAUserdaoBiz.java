@@ -8,7 +8,7 @@ import com.huang.pojo.OAScore;
 import com.huang.pojo.OAStudent;
 import com.huang.pojo.UserOA;
 /**
- * 
+ *
  *@author	黄远志
  *@date		2019年6月22日下午10:57:43
  *@GitHub	https://github.com/huangyuanzhi1997
@@ -17,8 +17,7 @@ import com.huang.pojo.UserOA;
 public interface OAUserdaoBiz {
 	//OA页面登录
 	public UserOA OaLogin(@Param("username")String username,@Param("password")String password);
-	
-	
+
 	//Student信息查询
 	public List<OAStudent> getSelectMess(@Param("text1")String text1,@Param("text2")String text2);
 	//Student信息删除
@@ -29,9 +28,7 @@ public interface OAUserdaoBiz {
 	public OAStudent getupdate(@Param("id")Integer id);
 	 //修改Student
     int updateStudent(OAStudent id);
-    
-    
-    
+
     //Score信息查询
     public List<OAScore> ScoreSelect(@Param("text5")String text5,@Param("text6")String text6);
     //Score信息删除
@@ -42,9 +39,6 @@ public interface OAUserdaoBiz {
     public OAScore getupdateOAScore(@Param("id")Integer id);
     //修改Student
     int updateScore(OAScore id);
-    
-    
-    
     
    //Class班级查询
   	public List<OAClass> ClassSelect(@Param("text3")String text3,@Param("text4")String text4);

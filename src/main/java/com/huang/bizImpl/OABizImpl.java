@@ -85,9 +85,6 @@ public class OABizImpl implements OAUserdaoBiz {
 		return this.oaUserdao.UserOAs(id);
 	}
 	
-	
-	
-	
 	//≤È—Ø
 	@Override
 	public List<OAScore> ScoreSelect(String text5, String text6) {

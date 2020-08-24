@@ -9,7 +9,13 @@
   <settings>
     <setting name="logImpl" value="LOG4J" />
   </settings>
-  
+
+  <settings>
+    <setting name="defaultExecutorType" value="REUSE" />
+    <!-- 配置控制台输出 -->
+    <setting name="logImpl" value="STDOUT_LOGGING"/>
+  </settings>
+
  <!--  <typeAliases>
     <package name="entity" />
   </typeAliases> -->

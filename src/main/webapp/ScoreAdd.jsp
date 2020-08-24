@@ -49,11 +49,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   </tr>
                   <tr>
                     <td height="30" align="right"><span style="color:red;"></span>学号：</td>
-                    <td><input name="sid" type="text" class="text6" id="sid"></td>
+                    <td><input name="num" type="text" class="text6" id="num"></td>
                   </tr>
                   <tr>
                     <td height="30" align="right"><span style="color:red;"></span>姓名：</td>
-                    <td><input name="sname" type="text" class="text6" id="sname"></td>
+                    <td><input name="name" type="text" class="text6" id="name"></td>
                   </tr>
                   <tr>
                     <td height="30" align="right"><span style="color:red;"></span>课程名称：</td>
